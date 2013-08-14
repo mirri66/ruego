@@ -1,0 +1,23 @@
+<h1>Listing auths</h1>
+
+<table>
+  <tr>
+    <th>Twitter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @auths.each do |auth| %>
+  <tr>
+    <td><%= auth.twitter %></td>
+    <td><%= link_to 'Show', auth %></td>
+    <td><%= link_to 'Edit', edit_auth_path(auth) %></td>
+    <td><%= link_to 'Destroy', auth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auth', new_auth_path %>

@@ -1,0 +1,21 @@
+<%= form_for(@auth) do |f| %>
+  <% if @auth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@auth.errors.count, "error") %> prohibited this auth from being saved:</h2>
+
+      <ul>
+      <% @auth.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
